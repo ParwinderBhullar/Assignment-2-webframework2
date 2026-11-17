@@ -1,0 +1,22 @@
+{
+  "name": "ite5425-a2-guided-build",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed": "node scripts/seed-users.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.60.0",
+    "mongodb": "^6.20.0",
+    "jose": "^6.1.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.6.1"
+  }
+}

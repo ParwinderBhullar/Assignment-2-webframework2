@@ -1,0 +1,4 @@
+'use client';
+import {useRouter} from 'next/navigation';
+import {useForm} from 'react-hook-form';
+export default function SearchForm(){const router=useRouter();const {register,handleSubmit,formState:{errors}}=useForm();function submit(data){const query=new URLSearchParams({q:data.keyword});if(data.titleOnly)query.set('title','true');router.push(`/artwork?${query.toString()}`)}return <form onSubmit={handleSubmit(submit)}><label>Keyword<br/><input className="field" {...register('keyword',{required:'Keyword required',minLength:{value:3,message:'Enter at least 3 characters'}})}/></label>{errors.keyword&&<p className="error">{errors.keyword.message}</p>}<p><label><input type="checkbox" {...register('titleOnly')}/> Search titles only</label></p><button className="button">Find artworks</button></form>}
